@@ -1,34 +1,52 @@
-vim.o.clipboard = 'unnamedplus'
+local options = vim.opt
 
-vim.opt.guicursor = ""
-
-vim.opt.nu = true
-vim.opt.relativenumber = true
-
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-
-vim.opt.smartindent = true
-
-vim.opt.wrap = false
-
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
-
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-
-vim.opt.termguicolors = true
-
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
-
-vim.opt.updatetime = 50
-
-vim.opt.colorcolumn = "80"
-
+options.autowrite = true -- Enable auto write
+options.backup = false
+options.clipboard = "unnamedplus" -- Sync with system clipboard
+options.colorcolumn = "100"
+options.completeopt = "menu,menuone,noselect"
+options.conceallevel = 3 -- Hide * markup for bold and italic
+options.confirm = true -- Confirm to save changes before exiting modified buffer
+options.cursorline = true -- Enable highlighting of the current line
+options.expandtab = true -- Use spaces instead of tabs
+options.hlsearch = false
+options.formatoptions = "jcroqlnt" -- tcqj
+options.grepformat = "%f:%l:%c:%m"
+options.grepprg = "rg --vimgrep"
+options.ignorecase = true -- Ignore case
+options.inccommand = "nosplit" -- preview incremental substitute
+options.incsearch = true
+options.isfname:append("@-@")
+options.laststatus = 0
+options.list = true -- Show some invisible characters (tabs...
+options.mouse = "a" -- Enable mouse mode
+options.nu = true
+options.number = true -- Print line number
+options.pumblend = 10 -- Popup blend
+options.pumheight = 10 -- Maximum number of entries in a popup
+options.relativenumber = true -- Relative line numbers
+options.scrolloff = 8 -- Lines of context
+options.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
+options.shiftround = true -- Round indent
+options.shiftwidth = 4 -- Size of an indent
+options.shortmess:append({ W = true, I = true, c = true })
+options.showmode = false -- Dont show mode since we have a statusline
+options.sidescrolloff = 8 -- Columns of context
+options.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
+options.smartcase = true -- Don't ignore case with capitals
+options.smartindent = true -- Insert indents automatically
+options.softtabstop = 4
+options.spelllang = { "en" }
+options.splitbelow = true -- Put new windows below current
+options.splitright = true -- Put new windows right of current
+options.swapfile = false
+options.tabstop = 4 -- Number of spaces tabs count for
+options.termguicolors = true -- True color support
+options.timeoutlen = 300
+options.undodir = os.getenv("HOME") .. "/.vim/undodir"
+options.undofile = true
+options.undolevels = 10000
+options.updatetime = 50 -- Save swap file and trigger CursorHold
+options.wildmode = "longest:full,full" -- Command-line completion mode
+options.winminwidth = 5 -- Minimum window width
+options.wrap = false -- Disable line wrap

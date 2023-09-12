@@ -1,23 +1,40 @@
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
-    -- colorscheme
+    -- colorscheme - kanagawa
     use({
         'rebelot/kanagawa.nvim',
-        as = "kanagawa",
-        config = function()
-            vim.cmd('colorscheme kanagawa-lotus')
-        end
     })
+
+    use { "briones-gabriel/darcula-solid.nvim", requires = "rktjmp/lush.nvim" }
+
+    use 'lourenci/github-colors'
+
+    use({
+        'shaunsingh/moonlight.nvim',
+        as = 'moonlight'
+    })
+
+    use 'Mofiqul/vscode.nvim'
 
     -- fuzzy finder
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.2',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
     -- syntax highlighting
-    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate',
+        config = function()
+            require 'nvim-treesitter.configs'.setup {
+                highlight = {
+                    enabled = true,
+                }
+            }
+        end,
+    }
 
     -- undo
     use('mbbill/undotree')
@@ -25,18 +42,27 @@ return require('packer').startup(function(use)
     -- git
     use('tpope/vim-fugitive')
 
-    -- language server
+    -- lsp & autocompletion magic
     use {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
+        branch = 'v3.x',
         requires = {
-            {'neovim/nvim-lspconfig'},
-            {'williamboman/mason.nvim'},
-            {'williamboman/mason-lspconfig.nvim'},
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'L3MON4D3/LuaSnip'},
+            -- mason to handle auto-installation of our various lsps
+            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason-lspconfig.nvim' },
+            -- lsp Support
+            { 'neovim/nvim-lspconfig' },
+            -- autocompletion
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'L3MON4D3/LuaSnip' },
         }
+    }
+
+    -- replacement for tsserver lsp
+    use {
+        "pmizio/typescript-tools.nvim",
+        requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     }
 
     -- git gutter +/- flags
@@ -82,7 +108,7 @@ return require('packer').startup(function(use)
     -- todo comment highlighting
     use {
         "folke/todo-comments.nvim",
-        dependencies = { "nvim-lua/plenary.nvim"}
+        dependencies = { "nvim-lua/plenary.nvim" }
     }
 
     -- css color highlighting
@@ -96,4 +122,26 @@ return require('packer').startup(function(use)
 
     -- emmet for impatient devs
     use 'mattn/emmet-vim'
+
+    -- prettier formatting
+    use('neovim/nvim-lspconfig')
+    use('jose-elias-alvarez/null-ls.nvim')
+    use('MunifTanjim/prettier.nvim')
+
+    -- telescopic cheatsheet because vim is hard
+    use {
+        'sudormrfbin/cheatsheet.nvim',
+        requires = {
+            { 'nvim-telescope/telescope.nvim' },
+            { 'nvim-lua/popup.nvim' },
+            { 'nvim-lua/plenary.nvim' },
+        }
+    }
+
+    -- themery because i cannot decide on a theme
+    use 'zaldih/themery.nvim'
+
+    -- i thought i could live without this but i cannot
+    use 'nvim-lua/plenary.nvim'
+    use 'ThePrimeagen/harpoon'
 end)
