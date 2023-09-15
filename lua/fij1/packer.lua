@@ -17,6 +17,8 @@ return require('packer').startup(function(use)
 
     use 'Mofiqul/vscode.nvim'
 
+    use { "catppuccin/nvim", as = "catppuccin" }
+
     -- fuzzy finder
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.2',
