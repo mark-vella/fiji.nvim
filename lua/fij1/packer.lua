@@ -129,6 +129,7 @@ return require('packer').startup(function(use)
     use('neovim/nvim-lspconfig')
     use('jose-elias-alvarez/null-ls.nvim')
     use('MunifTanjim/prettier.nvim')
+    use('MunifTanjim/eslint.nvim')
 
     -- telescopic cheatsheet because vim is hard
     use {

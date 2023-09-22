@@ -19,16 +19,3 @@ vim.keymap.set('n', '<leader>ps', function()
     builtin.grep_string({ search = vim.fn.input('Grep > ') });
 end)
 
-telescope.setup {
-    defaults = {
-        mappings = {
-            i = {
-                ["<Enter>"] = open_in_nvim_tree,
-            },
-            n = {
-                ["<Enter"] = open_in_nvim_tree,
-            },
-        },
-    },
-}
-
