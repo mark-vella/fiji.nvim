@@ -731,18 +731,13 @@ require("lazy").setup({
 		-- change the command in the config to whatever the name of that colorscheme is
 		--
 		-- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`
-		"xiantang/darcula-dark.nvim",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-		},
+		"Mofiqul/vscode.nvim",
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000, -- make sure to load this before all the other start plugins
 		config = function()
 			-- Load the colorscheme here
-			vim.cmd.colorscheme("darcula-dark")
-
-			-- You can configure highlights by doing something like
-			vim.cmd.hi("Comment gui=none")
+			vim.cmd.colorscheme("vscode")
+			vim.o.background = "dark"
 		end,
 	},
 
@@ -752,15 +747,6 @@ require("lazy").setup({
 		event = "VimEnter",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = { signs = false },
-	},
-
-	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		event = "InsertEnter",
-		config = function()
-			require("copilot").setup({})
-		end,
 	},
 
 	{ -- Collection of various small independent plugins/modules
@@ -841,7 +827,7 @@ require("lazy").setup({
 	--
 	--  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
 	--    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-	-- { import = 'custom.plugins' },
+	{ import = "custom.plugins" },
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
