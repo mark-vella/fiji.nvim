@@ -29,4 +29,74 @@ return {
 			require("copilot").setup({})
 		end,
 	},
+
+	{
+		"Mofiqul/vscode.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd.colorscheme("vscode")
+			vim.o.background = "dark"
+		end,
+	},
+
+	{ "rebelot/kanagawa.nvim" },
+
+	{ "catppuccin/nvim", name = "catppuccin" },
+
+	{ "rose-pine/neovim", name = "rose-pine" },
+
+	{ "sainnhe/gruvbox-material" },
+
+	{ "projekt0n/github-nvim-theme" },
+
+	{ "jthvai/lavender.nvim" },
+
+	{
+		"zaldih/themery.nvim",
+		config = function()
+			require("themery").setup({
+				themes = {
+					-- Dark Colorschemes
+					"vscode",
+					"kanagawa-wave",
+					"kanagawa-dragon",
+					"catppuccin-frappe",
+					"catppuccin-macchiato",
+					"catppuccin-mocha",
+					"rose-pine-main",
+					"rose-pine-moon",
+					"github_dark",
+					"github_dark_default",
+					"github_dark_dimmed",
+					"github_dark_high_contrast",
+					-- Light Colorschemes
+					"kanagawa-lotus",
+					"catppuccin-latte",
+					"rose-pine-dawn",
+					"github_light",
+					"github_light_default",
+					"github_light_high_contrast",
+				},
+			})
+		end,
+	},
+
+	{
+		"Equilibris/nx.nvim",
+
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+		},
+
+		opts = {
+			-- See below for config options
+			nx_cmd_root = "npx nx",
+		},
+
+		-- Plugin will load when you use these keys
+		keys = {
+			{ "<leader>nx", "<cmd>Telescope nx actions<CR>", desc = "nx actions" },
+		},
+	},
 }
