@@ -54,6 +54,9 @@ vim.api.nvim_set_keymap('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent director
 -- Themery setup
 vim.api.nvim_set_keymap('n', '<leader>tt', '<CMD>Themery<CR>', { desc = 'Open Themery in Telescope', noremap = true, silent = true })
 
+-- Transparency setup
+vim.api.nvim_set_keymap('n', '<leader>tp', '<CMD>TransparentToggle<CR>', { desc = 'Toggle transparency', noremap = true, silent = true })
+
 -- Copilot setup
 vim.api.nvim_set_keymap('i', '<C-j>', 'copilot#Next()', { desc = 'Navigate to next Copilot suggestion', expr = true, silent = true, noremap = true })
 vim.api.nvim_set_keymap('i', '<C-k>', 'copilot#Previous()', { desc = 'Navigate to previous Copilot suggestion', expr = true, silent = true, noremap = true })
