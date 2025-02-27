@@ -23,6 +23,11 @@ return {
           colorscheme = 'melange',
           before = [[ vim.opt.background = "dark" ]],
         },
+        {
+          name = 'gruvbox-dark',
+          colorscheme = 'gruvbox',
+          before = [[ vim.opt.background = "dark" ]],
+        },
         -- Light Colorschemes
         'kanagawa-lotus',
         'catppuccin-latte',
@@ -36,6 +41,11 @@ return {
         {
           name = 'melange-light',
           colorscheme = 'melange',
+          before = [[ vim.opt.background = "light" ]],
+        },
+        {
+          name = 'gruvbox-light',
+          colorscheme = 'gruvbox',
           before = [[ vim.opt.background = "light" ]],
         },
       },

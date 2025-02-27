@@ -21,4 +21,6 @@ return {
       'rktjmp/lush.nvim',
     },
   },
+
+  { 'ellisonleao/gruvbox.nvim' },
 }
