@@ -38,8 +38,8 @@ vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
 -- This is a great mapping, investigate how to make it work for me with TypeScript.
 vim.keymap.set('n', '<leader>ee', 'oif err != nil {<CR>}<Esc>Oreturn err<Esc>')
 
+-- Visit init.lua file in /custom
 vim.keymap.set('n', '<leader>vpp', '<cmd>e ~/.config/nvim/lua/custom/plugins/init.lua<CR>')
-vim.keymap.set('n', '<leader>mr', '<cmd>CellularAutomaton make_it_rain<CR>')
 
 vim.keymap.set('n', '<leader><leader>', function()
   vim.cmd 'so'
