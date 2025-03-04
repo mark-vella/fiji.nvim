@@ -17,10 +17,18 @@ return {
 
   {
     'briones-gabriel/darcula-solid.nvim',
-    dependencies = {
-      'rktjmp/lush.nvim',
-    },
+    dependencies = { 'rktjmp/lush.nvim' },
   },
 
   { 'ellisonleao/gruvbox.nvim' },
+
+  {
+    'Mofiqul/adwaita.nvim',
+  },
+
+  {
+    'xero/miasma.nvim',
+  },
+
+  { 'miikanissi/modus-themes.nvim' },
 }

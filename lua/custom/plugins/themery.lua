@@ -28,6 +28,31 @@ return {
           colorscheme = 'gruvbox',
           before = [[ vim.opt.background = "dark" ]],
         },
+        {
+          name = 'miasma',
+          colorscheme = 'miasma',
+        },
+        {
+          name = 'adwaita-dark',
+          colorscheme = 'adwaita',
+          before = [[
+          vim.opt.background = "dark"
+          vim.g.adwaita_darker = false 
+          ]],
+        },
+        {
+          name = 'adwaita-darker',
+          colorscheme = 'adwaita',
+          before = [[
+          vim.opt.background = "dark"
+          vim.g.adwaita_darker = true
+          ]],
+        },
+        {
+          name = 'modus-dark',
+          colorscheme = 'modus',
+          before = [[ vim.opt.background = "dark" ]],
+        },
         -- Light Colorschemes
         'kanagawa-lotus',
         'catppuccin-latte',
@@ -46,6 +71,16 @@ return {
         {
           name = 'gruvbox-light',
           colorscheme = 'gruvbox',
+          before = [[ vim.opt.background = "light" ]],
+        },
+        {
+          name = 'adwaita-light',
+          colorscheme = 'adwaita',
+          before = [[ vim.opt.background = "light" ]],
+        },
+        {
+          name = 'modus-light',
+          colorscheme = 'modus',
           before = [[ vim.opt.background = "light" ]],
         },
       },
