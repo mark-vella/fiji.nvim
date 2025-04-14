@@ -55,5 +55,9 @@ return {
     vim.keymap.set('n', '<C-S-N>', function()
       harpoon:list():next()
     end)
+
+    vim.api.nvim_create_user_command('HarpoonEmpty', function()
+      harpoon:list():clear()
+    end, { desc = 'Clear all files from Harpoon list' })
   end,
 }
